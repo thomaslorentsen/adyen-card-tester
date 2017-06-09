@@ -4,7 +4,7 @@ Test Adyen Card Encryption
 Copy config.example.php to config.php and set the key
 
 ```bash
-npm install
+npm install adyen-cse-js
 ```
 
 ```bash
