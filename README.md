@@ -1,7 +1,7 @@
 # Adyen Client Slide Encryption Tester
 This Docker container allows you to generate the client side encrypted payload for Adyen.
 # Installing
-Pull the age from Docker with:
+Pull the image from Docker with:
 ```bash
 docker pull imacatlol/adyen-card-tester
 ```
