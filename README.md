@@ -1,23 +1,20 @@
-# adyen-test-card-encryption
-Test Adyen Card Encryption
-
-https://hub.docker.com/r/imacatlol/adyen-card-tester/
-
-
+# Adyen Client Slide Encryption Tester
+This Docker container allows you to generate the client side encrypted payload for Adyen.
+# Installing
+Pull the age from Docker with:
 ```bash
-docker build --no-cache -t adyen-card-tester .
+docker pull imacatlol/adyen-card-tester
 ```
-
+# Running
+Then run the container with the following command and replace ```ADYEN_KEY``` with your Adyen public key.
 ```bash
 docker run -d --name adyen-card-tester \
 	-p 127.0.0.1:4444:5000 \
 	-e ADYEN_KEY="adyen public key" \
 	adyen-card-tester
 ```
+Once the container has started you can open the app in your browser.
 
+http://127.0.0.1:4444
 
-```bash
-docker stop adyen-card-tester
-docker rm adyen-card-tester
-docker rmi adyen-card-tester
-```
+Press submit to view the encrypted payload.
