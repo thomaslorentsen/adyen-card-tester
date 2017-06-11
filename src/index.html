@@ -1,14 +1,3 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: toml
- * Date: 6/9/17
- * Time: 4:16 PM
- */
-
-require 'config.php';
-?>
-
 <html>
 <head>
     <script
@@ -31,9 +20,9 @@ require 'config.php';
 <textarea id="enc"></textarea>
 
 
-<script type="text/javascript" src="adyen.encrypt.nodom.min.js"></script>
+<script type="text/javascript" src="node_modules/adyen-cse-js/js/adyen.encrypt.nodom.min.js"></script>
 <script type="text/javascript">
-var key =  "<?php echo $key ?>"
+    var key =  "<?php echo $key ?>"
 </script>
 <script type="text/javascript">
     (function() {

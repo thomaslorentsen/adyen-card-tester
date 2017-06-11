@@ -1,5 +1,13 @@
-FROM php:7.0-apache
+FROM node
 
-MAINTAINER Tom Lorentsen "tom@thomaslorentsen.co.uk"
+LABEL maintainer "tom@thomaslorentsen.co.uk"
 
-COPY src/ /var/www/html/
+WORKDIR /home/node/
+
+COPY package.json package.json
+
+RUN npm install
+
+COPY src/ .
+
+CMD [ "node", "app.js" ]

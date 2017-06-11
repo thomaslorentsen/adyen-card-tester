@@ -1,0 +1,65 @@
+<form method="POST" action="" id="adyen-encrypted-form">
+    <p>
+    <input value="4111111111111111" type="text" size="20" autocomplete="off" id="number" data-encrypted-name="number" />
+    </p>
+    <p>
+    <input value="mr test" type="text" size="20" autocomplete="off" id="holderName" data-encrypted-name="holderName" />
+    </p>
+	<p>
+	<input value="08" type="text" size="2" maxlength="2" autocomplete="off" id="expiryMonth" data-encrypted-name="expiryMonth" />
+    </p>
+	<p>
+	<input value="2018" type="text" size="4" maxlength="4" autocomplete="off" id="expiryYear" data-encrypted-name="expiryYear" />
+    </p>
+	<p>
+	<input value="737" type="text" size="4" maxlength="4" autocomplete="off" id="cvc" data-encrypted-name="cvc" />
+    </p>
+	<p>
+	<input type="submit" value="Pay" />
+	</p>
+</form>
+
+<textarea id="enc"></textarea>
+
+
+<script type="text/javascript" src="node_modules/adyen-cse-js/js/adyen.encrypt.nodom.min.js"></script>
+<script type="text/javascript">
+var key =  "{{apiKey}}"
+</script>
+<script type="text/javascript">
+    (function() {
+        $('#adyen-encrypted-form').on('submit', function(e) {
+            e.preventDefault();
+            var options = {}; // See adyen.encrypt.nodom.html for details
+
+            var cseInstance = adyen.encrypt.createEncryption(key, options);
+
+            encryptMyData();
+
+            function encryptMyData() {
+
+                var postData = {};
+
+                var today = new Date();
+
+                var cardData = {
+                    number : $('#number').val(),
+                    cvc : $('#cvc').val(),
+                    holderName : $('#holderName').val(),
+                    expiryMonth : $('#expiryMonth').val(),
+                    expiryYear : $('#expiryYear').val(),
+                    generationtime : today.toISOString()
+                };
+
+                postData['adyen-encrypted-data'] = cseInstance.encrypt(cardData);
+
+                console.log(postData)
+
+                $('#enc').text(postData['adyen-encrypted-data']);
+
+                // AJAX call or different handling of the post data.
+            }
+        })
+
+    })();
+</script>
