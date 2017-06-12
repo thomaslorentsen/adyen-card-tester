@@ -1,26 +1,30 @@
-<form method="POST" action="" id="adyen-encrypted-form">
-    <p>Card No:
-    <input value="4111111111111111" type="text" size="20" autocomplete="off" id="number" data-encrypted-name="number" />
-    </p>
-    <p> Holder Name:
-    <input value="mr test" type="text" size="20" autocomplete="off" id="holderName" data-encrypted-name="holderName" />
-    </p>
-	<p> Expiry Month:
-	<input value="08" type="text" size="2" maxlength="2" autocomplete="off" id="expiryMonth" data-encrypted-name="expiryMonth" />
-    </p>
-	<p> Expiry Year:
-	<input value="2018" type="text" size="4" maxlength="4" autocomplete="off" id="expiryYear" data-encrypted-name="expiryYear" />
-    </p>
-	<p> CVC:
-	<input value="737" type="text" size="4" maxlength="4" autocomplete="off" id="cvc" data-encrypted-name="cvc" />
-    </p>
-	<p>
-	<input type="submit" value="Pay" />
-	</p>
-</form>
-
-<textarea id="enc" style="width: 500px;height: 200px;"></textarea>
-
+<div class="jumbotron">
+    <form method="POST" action="" id="adyen-encrypted-form">
+        <fieldset>
+        <p>Card No:
+        <input value="4111111111111111" type="text" size="20" autocomplete="off" id="number" data-encrypted-name="number" />
+        </p>
+        <p> Holder Name:
+        <input value="mr test" type="text" size="20" autocomplete="off" id="holderName" data-encrypted-name="holderName" />
+        </p>
+        <p> Expiry Month:
+        <input value="08" type="text" size="2" maxlength="2" autocomplete="off" id="expiryMonth" data-encrypted-name="expiryMonth" />
+        </p>
+        <p> Expiry Year:
+        <input value="2018" type="text" size="4" maxlength="4" autocomplete="off" id="expiryYear" data-encrypted-name="expiryYear" />
+        </p>
+        <p> CVC:
+        <input value="737" type="text" size="4" maxlength="4" autocomplete="off" id="cvc" data-encrypted-name="cvc" />
+        </p>
+        <p>
+        <input type="submit" value="Generate Payload" />
+        </p>
+        </fieldset>
+        <fieldset>
+            <textarea id="enc" style="width: 500px;height: 200px;"></textarea>
+        </fieldset>
+    </form>
+</div>
 
 <script type="text/javascript" src="/node_modules/adyen-cse-js/js/adyen.encrypt.nodom.min.js"></script>
 <script type="text/javascript">
