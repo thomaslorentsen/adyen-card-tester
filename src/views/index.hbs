@@ -19,7 +19,7 @@
 	</p>
 </form>
 
-<textarea id="enc"></textarea>
+<textarea id="enc" style="width: 500px;height: 200px;"></textarea>
 
 
 <script type="text/javascript" src="/node_modules/adyen-cse-js/js/adyen.encrypt.nodom.min.js"></script>
@@ -51,13 +51,14 @@ var key =  "{{apiKey}}"
                     generationtime : today.toISOString()
                 };
 
-                postData['adyen-encrypted-data'] = cseInstance.encrypt(cardData);
-
-                console.log(postData)
-
-                $('#enc').text(postData['adyen-encrypted-data']);
-
-                // AJAX call or different handling of the post data.
+                try {
+			 		postData['adyen-encrypted-data'] = cseInstance.encrypt(cardData);
+                	console.log(postData)
+	                $('#enc').text(postData['adyen-encrypted-data']);
+                } catch(e) {
+					console.log(e);
+					$('#enc').text(e)
+                }
             }
         })
 
