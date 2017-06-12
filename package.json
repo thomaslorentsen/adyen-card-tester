@@ -23,6 +23,7 @@
     "adyen-cse-js": "^0.1.19",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.10",
     "handlebars-form-helpers": "^0.1.3"
   }
 }
