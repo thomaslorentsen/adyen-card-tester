@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/thomaslorentsen/adyen-card-tester.svg?branch=master)](https://travis-ci.org/thomaslorentsen/adyen-card-tester)
 # Adyen Client Slide Encryption Tester
 This Docker container allows you to generate the client side encrypted payload for Adyen.
 # Installing
