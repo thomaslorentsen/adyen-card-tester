@@ -1,19 +1,19 @@
 <div>
     <form method="POST" action="" id="adyen-encrypted-form">
         <fieldset>
-        <p>Card No:
+        <p>{{label "number" "Card No"}}
         <input value="4111111111111111" type="text" size="20" autocomplete="off" id="number" data-encrypted-name="number" />
         </p>
-        <p> Holder Name:
+        <p>{{label "holderName" "Holder Name"}}
         <input value="mr test" type="text" size="20" autocomplete="off" id="holderName" data-encrypted-name="holderName" />
         </p>
-        <p> Expiry Month:
+        <p> {{label "expiryMonth" "Expiry Month"}}
         <input value="08" type="text" size="2" maxlength="2" autocomplete="off" id="expiryMonth" data-encrypted-name="expiryMonth" />
         </p>
-        <p> Expiry Year:
+        <p> {{label "expiryYear" "Expiry Year"}}
         <input value="2018" type="text" size="4" maxlength="4" autocomplete="off" id="expiryYear" data-encrypted-name="expiryYear" />
         </p>
-        <p> CVC:
+        <p> {{label "cvc" "CVC"}} 
         <input value="737" type="text" size="4" maxlength="4" autocomplete="off" id="cvc" data-encrypted-name="cvc" />
         </p>
         <p>
