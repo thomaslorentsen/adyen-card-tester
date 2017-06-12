@@ -11,7 +11,7 @@ Then run the container with the following command and replace ```ADYEN_KEY``` wi
 docker run -d --name adyen-card-tester \
 	-p 127.0.0.1:4444:5000 \
 	-e ADYEN_KEY="adyen public key" \
-	adyen-card-tester
+	imacatlol/adyen-card-tester
 ```
 Once the container has started you can open the app in your browser.
 
