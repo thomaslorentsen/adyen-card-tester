@@ -3,6 +3,9 @@ var apiKey = process.env.ADYEN_KEY;
 var express = require('express'),
     app = express();
 
+var hbs = require('hbs');
+require('handlebars-form-helpers').register(hbs.handlebars);
+
 var exphbs = require('express-handlebars')
 app.engine('.hbs', exphbs({defaultLayout: 'single', extname: '.hbs'}))
 app.set('view engine', '.hbs')
