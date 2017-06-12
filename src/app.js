@@ -10,6 +10,11 @@ var exphbs = require('express-handlebars')
 app.engine('.hbs', exphbs({defaultLayout: 'single', extname: '.hbs'}))
 app.set('view engine', '.hbs')
 
+HandlebarsFormHelpers.register(Handlebars, {
+  namespace: 'custom',
+  validationErrorClass: 'custom-validation-class'
+});
+
 var path = require('path');
 app.set('views', path.join(__dirname, 'views'))
 
