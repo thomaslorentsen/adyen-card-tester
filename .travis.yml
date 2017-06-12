@@ -13,6 +13,7 @@ before_script:
   - wget --quiet 127.0.0.1:80
 
 script:
+  - wget --quiet 127.0.0.1:80
   - docker ps | grep -q adyen-card-tester
 
 after_failure:
