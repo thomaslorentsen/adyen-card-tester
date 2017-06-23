@@ -6,6 +6,7 @@ services:
   - docker
 
 install:
+  - docker -v
   - docker build -t adyen-card-tester .
   - docker run -d -p 127.0.0.1:80:5000 -e ADYEN_KEY="adyen public key" --name adyen-card-tester adyen-card-tester
 
