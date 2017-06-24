@@ -20,6 +20,8 @@ docker run -d --name adyen-card-tester \
 ```
 Once the container has started you can open the app in your browser.
 
-http://127.0.0.1:4444
+```bash
+open http://127.0.0.1:4444
+```
 
 Press submit to view the encrypted payload.
