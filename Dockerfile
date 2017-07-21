@@ -8,6 +8,8 @@ COPY package.json package.json
 
 RUN npm install
 
-COPY src/ .
+COPY app.js .
+COPY js js
+COPY views views
 
 CMD [ "node", "app.js" ]

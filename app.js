@@ -17,4 +17,6 @@ app.get('/', function(req, res) {
     res.render('index', { apiKey: apiKey })
 });
 
-app.listen(5000);
+server = app.listen(5000)
+
+module.exports = server

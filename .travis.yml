@@ -8,6 +8,8 @@ services:
 install:
   # Install mocha for testing express app
   - npm install -g mocha
+  - npm install supertest
+  - npm install
 
 before_script:
   # Build docker image
@@ -18,6 +20,7 @@ before_script:
 script:
   - wget --quiet 127.0.0.1:80
   - docker ps | grep -q adyen-card-tester
+  - mocha
 
 after_failure:
   - docker logs adyen-card-tester
