@@ -1,43 +1,38 @@
 (function() {
+    var options = {}
+    var cseInstance = adyen.encrypt.createEncryption(key, options)
+
     $('#adyen-encrypted-form').on('submit', function(e) {
+        e.preventDefault()
         var form = $(this)
-        e.preventDefault();
-        var options = {}; // See adyen.encrypt.nodom.html for details
-        var cseInstance = adyen.encrypt.createEncryption(key, options);
-        encryptMyData();
-        function encryptMyData() {
-            var postData = {}
-            var cardData = getCardData(form)
-            try {
-                postData['adyen-encrypted-data'] = cseInstance.encrypt(cardData);
-                console.log(postData)
-                $('.enc', form).text(postData['adyen-encrypted-data'])
-            } catch(e) {
-                console.log(e);
-                $('.enc', form).text(e)
-            }
-        }
+        var cardData = getCardData(form)
+        encryptMyData(form, cardData);
     })
 
     $('#adyen-encrypted-cvc-form').on('submit', function(e) {
+        e.preventDefault()
         var form = $(this)
-        e.preventDefault();
-        var options = {}; // See adyen.encrypt.nodom.html for details
-        var cseInstance = adyen.encrypt.createEncryption(key, options);
-        encryptMyData();
-        function encryptMyData() {
-            var postData = {};
-            var cardData = getCVCData(form)
-            try {
-                postData['adyen-encrypted-data'] = cseInstance.encrypt(cardData);
-                console.log(postData)
-                $('.enc', form).text(postData['adyen-encrypted-data'])
-            } catch(e) {
-                console.log(e);
-                $('.enc', form).text(e)
-            }
-        }
+        var cardData = getCVCData(form)
+        encryptMyData(form, cardData);
     })
+
+    /**
+     * Encrypt Card Data
+     *
+     * @param form
+     * @param cardData
+     */
+    function encryptMyData(form, cardData) {
+        var postData = {}
+        try {
+            postData['adyen-encrypted-data'] = cseInstance.encrypt(cardData);
+            console.log(postData)
+            $('.enc', form).text(postData['adyen-encrypted-data'])
+        } catch(e) {
+            console.log(e);
+            $('.enc', form).text(e)
+        }
+    }
 
     /**
      * Gets CVC from form
