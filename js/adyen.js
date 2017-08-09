@@ -2,6 +2,10 @@
     var options = {}
     var cseInstance = adyen.encrypt.createEncryption(key, options)
 
+    $("input:text, textarea").on('click focus', function() {
+        $(this).select()
+    })
+
     $('#adyen-encrypted-form').on('submit', function(e) {
         e.preventDefault()
         var form = $(this)
