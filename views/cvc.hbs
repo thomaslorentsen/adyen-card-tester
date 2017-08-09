@@ -1,0 +1,21 @@
+<div>
+    <form method="POST" action="" id="adyen-encrypted-cvc-form">
+        <fieldset>
+        <p> CVC:
+        <input value="737" type="text" size="4" maxlength="4" autocomplete="off" class="cvc" data-encrypted-name="cvc" />
+        </p>
+        <p>
+        <input type="submit" value="Generate Payload" />
+        </p>
+        </fieldset>
+        <fieldset>
+            <textarea class="enc" style="width: 500px;height: 200px;"></textarea>
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/javascript" src="/node_modules/adyen-cse-js/js/adyen.encrypt.nodom.min.js"></script>
+<script type="text/javascript">
+var key =  "{{apiKey}}"
+</script>
+<script type="text/javascript" src="/js/adyen.js"></script>

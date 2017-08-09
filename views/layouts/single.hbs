@@ -14,6 +14,16 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Adyen Payload Generator</h1>
+
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link {{cardActive}}" href="/">Encrypt Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{cvcActive}}" href="/cvc">Encrypt CVC</a>
+                        </li>
+                    </ul>
+
                     <p class="lead">Complete this form and press generate to get encrypted payload.</p>
                     {{{ body }}}
                 </div>
