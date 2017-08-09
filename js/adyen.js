@@ -1,7 +1,4 @@
 (function() {
-    var options = {}
-    var cseInstance = adyen.encrypt.createEncryption(key, options)
-
     $("input:text, textarea").on('click focus', function() {
         $(this).select()
     })
@@ -27,7 +24,9 @@
      * @param cardData
      */
     function encryptMyData(form, cardData) {
+        var options = {}
         var postData = {}
+        var cseInstance = adyen.encrypt.createEncryption(key, options)
         try {
             postData['adyen-encrypted-data'] = cseInstance.encrypt(cardData);
             console.log(postData)
