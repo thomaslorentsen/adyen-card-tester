@@ -8,7 +8,6 @@ services:
 install:
   # Install mocha for testing express app
   - npm install -g mocha
-  - npm install supertest
   - npm install
 
 before_script:
