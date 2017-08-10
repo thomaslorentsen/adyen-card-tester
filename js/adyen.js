@@ -28,6 +28,9 @@
         var postData = {}
         var cseInstance = adyen.encrypt.createEncryption(key, options)
         try {
+            var valid = cseInstance.validate(cardData)
+            console.log(valid)
+
             postData['adyen-encrypted-data'] = cseInstance.encrypt(cardData);
             console.log(postData)
             $('.enc', form).text(postData['adyen-encrypted-data'])
