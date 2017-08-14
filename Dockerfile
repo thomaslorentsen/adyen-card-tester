@@ -12,4 +12,6 @@ COPY app.js .
 COPY js js
 COPY views views
 
+EXPOSE 4444
+
 CMD [ "node", "app.js" ]

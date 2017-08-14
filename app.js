@@ -21,6 +21,6 @@ app.get('/cvc', function(req, res) {
     res.render('cvc', { apiKey: apiKey, cardActive: '', cvcActive: 'active' })
 });
 
-server = app.listen(5000)
+server = app.listen(4444)
 
 module.exports = server

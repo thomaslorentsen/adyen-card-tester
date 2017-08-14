@@ -13,7 +13,7 @@ install:
 before_script:
   # Build docker image
   - docker build -t adyen-card-tester .
-  - docker run -d -p 127.0.0.1:80:5000 -e ADYEN_KEY="adyen public key" --name adyen-card-tester adyen-card-tester
+  - docker run -d -p 127.0.0.1:80:4444 -e ADYEN_KEY="adyen public key" --name adyen-card-tester adyen-card-tester
   - wget --quiet 127.0.0.1:80
 
 script:
