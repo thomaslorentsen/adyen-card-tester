@@ -16,7 +16,7 @@ docker pull imacatlol/adyen-card-tester
 Then run the container with the following command and replace ```ADYEN_KEY``` with your Adyen public key.
 ```bash
 docker run -d --name adyen-card-tester \
-	-p 127.0.0.1:4444:5000 \
+	-p 127.0.0.1:4444:4444 \
 	-e ADYEN_KEY="adyen public key" \
 	imacatlol/adyen-card-tester
 ```
