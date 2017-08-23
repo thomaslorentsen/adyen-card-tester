@@ -1,0 +1,20 @@
+<div>
+    <form method="POST" action="" id="adyen-encrypted-holder-name-form">
+        <fieldset>
+            <p> Holder Name:
+                <input value="mr test" type="text" size="20" autocomplete="off" class="holderName" data-encrypted-name="holderName" /></p>
+            <p>
+                <input type="submit" value="Generate Payload" />
+            </p>
+        </fieldset>
+        <fieldset>
+            <textarea class="enc" style="width: 500px;height: 250px;"></textarea>
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/javascript" src="/node_modules/adyen-cse-js/js/adyen.encrypt.nodom.min.js"></script>
+<script type="text/javascript">
+    var key =  "{{apiKey}}"
+</script>
+<script type="text/javascript" src="/js/adyen.js"></script>
