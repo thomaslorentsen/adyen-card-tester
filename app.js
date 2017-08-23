@@ -14,11 +14,15 @@ app.use('/node_modules', express.static('node_modules'))
 app.use('/js', express.static('js'))
 
 app.get('/', function(req, res) {
-    res.render('index', { apiKey: apiKey, cardActive: 'active', cvcActive: '' })
+    res.render('index', { apiKey: apiKey, cardActive: 'active', cvcActive: '', nameActive: '' })
 });
 
 app.get('/cvc', function(req, res) {
-    res.render('cvc', { apiKey: apiKey, cardActive: '', cvcActive: 'active' })
+    res.render('cvc', { apiKey: apiKey, cardActive: '', cvcActive: 'active', nameActive: '' })
+});
+
+app.get('/name', function(req, res) {
+    res.render('name', { apiKey: apiKey, cardActive: '', cvcActive: '', nameActive: 'active' })
 });
 
 server = app.listen(4444)

@@ -17,6 +17,13 @@
         encryptMyData(form, cardData);
     })
 
+    $('#adyen-encrypted-holder-name-form').on('submit', function(e) {
+        e.preventDefault()
+        var form = $(this)
+        var cardData = getNameData(form)
+        encryptMyData(form, cardData);
+    })
+
     /**
      * Encrypt Card Data
      *
@@ -50,6 +57,20 @@
         var today = new Date();
         return {
             cvc : $('input[data-encrypted-name="cvc"]', form).val(),
+            generationtime : today.toISOString()
+        }
+    }
+
+    /**
+     * Gets Holder Name from form
+     *
+     * @param form
+     * @returns {{holderName: jQuery, generationtime: string}}
+     */
+    function getNameData(form) {
+        var today = new Date();
+        return {
+            holderName : $('input[data-encrypted-name="holderName"]', form).val(),
             generationtime : today.toISOString()
         }
     }

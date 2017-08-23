@@ -17,6 +17,11 @@ describe('loading express', function () {
             .get('/cvc')
             .expect(200, done);
     });
+    it('responds to /name', function testSlash(done) {
+        request(server)
+            .get('/name')
+            .expect(200, done);
+    });
     it('404 everything else', function testPath(done) {
         request(server)
             .get('/foo/bar')
