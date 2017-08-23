@@ -1,12 +1,13 @@
 [![Build Status](https://travis-ci.org/thomaslorentsen/adyen-card-tester.svg?branch=master)](https://travis-ci.org/thomaslorentsen/adyen-card-tester)
 [![Docker Build](https://img.shields.io/docker/automated/imacatlol/adyen-card-tester.svg)](https://hub.docker.com/r/imacatlol/adyen-card-tester/)
 [![Docker pulls](https://img.shields.io/docker/pulls/imacatlol/adyen-card-tester.svg)](https://hub.docker.com/r/imacatlol/adyen-card-tester/)
-# Adyen Client Side Encryption Tester
+# Adyen Client Side Encryption (CSE) Tester
 This Docker container allows you to generate the client side encrypted payload for Adyen using a simple web interface.
 
 With the generated payload, you can use it to authorise a payment through the Adyen API.
 
-You can enter alternative test cards using the [Adyen Test Cards](https://docs.adyen.com/developers/payments/test-cards/test-card-numbers).
+Alternative test cards are available on the [Adyen Test Cards Page](https://docs.adyen.com/developers/payments/test-cards/test-card-numbers).
+
 # Installing
 Pull the image from Docker with:
 ```bash
