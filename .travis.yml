@@ -2,13 +2,15 @@ language: python
 python:
   - 2.7
 
+cache: yarn
+
 services:
   - docker
 
 install:
   # Install mocha for testing express app
   - npm install -g mocha
-  - npm install
+  - yarn
 
 before_script:
   # Build docker image
