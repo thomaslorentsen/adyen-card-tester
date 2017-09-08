@@ -6,7 +6,7 @@ WORKDIR /home/node/
 
 COPY package.json package.json
 
-RUN npm install
+RUN yarn
 
 COPY app.js .
 COPY js js
