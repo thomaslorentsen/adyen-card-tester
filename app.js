@@ -13,6 +13,13 @@ app.set('views', path.join(__dirname, 'views'))
 app.use('/node_modules', express.static('node_modules'))
 app.use('/js', express.static('js'))
 
+app.all('/*', function (req, res, next) {
+    if ('simple' === req.query.layout) {
+        req.app.locals.layout = 'simple';
+    }
+    next();
+});
+
 app.get('/', function(req, res) {
     res.render('index', { apiKey: apiKey, cardActive: 'active', cvcActive: '', nameActive: '' })
 });

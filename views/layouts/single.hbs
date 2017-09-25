@@ -6,27 +6,27 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </head>
 <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Adyen Payload Generator</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Adyen Payload Generator</h1>
 
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link {{cardActive}}" href="/">Encrypt Card</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{cvcActive}}" href="/cvc">Encrypt CVC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{nameActive}}" href="/name">Encrypt Name</a>
-                        </li>
-                    </ul>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link {{cardActive}}" href="/">Encrypt Card</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{cvcActive}}" href="/cvc">Encrypt CVC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{nameActive}}" href="/name">Encrypt Name</a>
+                    </li>
+                </ul>
 
-                    <p class="lead">Complete this form and press generate to get encrypted payload.</p>
-                    {{{ body }}}
-                </div>
+                <p class="lead">Complete this form and press generate to get encrypted payload.</p>
+                {{{ body }}}
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

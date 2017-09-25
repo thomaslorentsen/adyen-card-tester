@@ -22,6 +22,11 @@ describe('loading express', function () {
             .get('/name')
             .expect(200, done);
     });
+    it('responds to / with simple layout', function testSlashSimple(done) {
+        request(server)
+            .get('/layout=simple')
+            .expect(200, done);
+    });
     it('404 everything else', function testPath(done) {
         request(server)
             .get('/foo/bar')
