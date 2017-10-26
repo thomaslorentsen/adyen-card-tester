@@ -7,7 +7,6 @@ This Docker container allows you to generate the client side encrypted payload f
 With the generated payload, you can use it to authorise a payment through the Adyen API.
 
 Alternative test cards are available on the [Adyen Test Cards Page](https://docs.adyen.com/developers/payments/test-cards/test-card-numbers).
-
 # Installing
 Pull the image from Docker with:
 ```bash
